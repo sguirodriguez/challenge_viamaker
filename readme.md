@@ -20,4 +20,4 @@ git clone https://github.com/seu-usuario/seu-projeto.git
 
 2. acesse a pasta front e siga o readme
 
-3. acessa a pasta back e siga o readme
+3. acesse a pasta back e siga o readme
