@@ -7,7 +7,7 @@ export default {
     user: String(process.env.DB_USERNAME),
     password: String(process.env.DB_PASSWORD),
     timezone: String(process.env.DB_TIMEZONE),
-    dialect: String(process.env.DB_DIALECT),
+    dialect: "postgres",
     pool: {
       min: 0,
       max: 5,
