@@ -36,9 +36,10 @@ export const models = singleton<DatabaseInterface>(
       password: process.env.DB_PASSWORD || "",
       optionsConfig: {
         dialect: process.env.DB_DIALECT || "postgres",
-        host: process.env.DB_HOST || "localhost",
-        port: parseInt(process.env.DB_PORT || "5432", 10),
+        host: process.env.DB_HOST,
+        port: parseInt(process.env.DB_PORT || "5432"),
         operatorsAliases: false,
+        ssl: false
       },
     };
 
@@ -47,7 +48,10 @@ export const models = singleton<DatabaseInterface>(
     instance.sequelize
       .authenticate()
       .then(() => {
-        console.log("Connection has been established successfully.", process.env.NODE_ENV);
+        console.log(
+          "Connection has been established successfully.",
+          process.env.NODE_ENV
+        );
       })
       .catch((error: unknown) => {
         console.error("Unable to connect to the database:", error);

@@ -4,7 +4,7 @@ import routes from "./routes";
 import routesVideo from "./routes/video";
 import routesUser from "./routes/user";
 import routesProduct from "./routes/product";
-import './models'
+
 
 require("dotenv").config();
 
