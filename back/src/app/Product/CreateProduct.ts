@@ -26,14 +26,13 @@ class CreateProduct {
           },
         };
       }
-
+    
       const hasProduct = await models().Product.findOne({
         where: {
           name,
-          description,
         },
       });
-
+     
       if (hasProduct) {
         return {
           status: 409,
@@ -44,13 +43,13 @@ class CreateProduct {
           },
         };
       }
-
+    
       const product = await models().Product.create({
         name,
         description,
         value,
       });
-
+    
       if (!product) {
         return {
           status: 409,
@@ -60,9 +59,10 @@ class CreateProduct {
           },
         };
       }
-
+  
       return { status: 200, response: { data: product, error: null } };
     } catch (error) {
+
       return { status: 500, response: { error } };
     }
   }

@@ -14,9 +14,9 @@ app.use(cors({ origin: process.env.CORS_ORIGIN || "*" }));
 app.use(express.json());
 
 app.use(routes);
-app.use("/video", routesVideo);
-app.use("/client", routesUser);
-app.use("/product", routesProduct);
+app.use("/videos", routesVideo);
+app.use("/usuarios", routesUser);
+app.use("/produtos", routesProduct);
 
 app.listen(process.env.PORT || 3333, async () => {
   console.log("running on port 3333");
