@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ProductsScreen from './products.screen';
 import request from '../../helpers/request';
+import { toast } from 'react-toastify';
 
 const ProductsController = () => {
   const [products, setProducts] = useState([]);
@@ -28,8 +29,9 @@ const ProductsController = () => {
       path: 'produtos',
     });
     setLoading(false);
+
     if (error) {
-      return;
+      return toast.error(error);
     }
 
     setProducts(data);

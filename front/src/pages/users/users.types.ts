@@ -1,3 +1,5 @@
+import { Id } from "react-toastify";
+
 export type HandlersUsersTypes = {
     users: Array<{
         id: number;
@@ -29,7 +31,7 @@ export type HandlersUsersTypes = {
       setName: React.Dispatch<React.SetStateAction<string>>;
       email: string;
       setEmail: React.Dispatch<React.SetStateAction<string>>;
-      handleCreateUser: () => Promise<void>;
-      handleUpdateUser: () => Promise<void>;
-      handleDeleteUser: (id: number) => Promise<void>;
+      handleCreateUser: () => Promise<Id | undefined | void>;
+      handleUpdateUser: () => Promise<Id | undefined | void>;
+      handleDeleteUser: (id: number) =>  Promise<Id | undefined | void>;
 }

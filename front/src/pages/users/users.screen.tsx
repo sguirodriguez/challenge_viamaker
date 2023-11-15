@@ -79,7 +79,6 @@ const UsersScreen = ({ handlers }: { handlers: HandlersUsersTypes }) => {
             style={{ width: '130px' }}
             onClick={() => {
               setModalType('createUser');
-              closeModal();
               handleCreateUser();
             }}
           />
@@ -136,7 +135,6 @@ const UsersScreen = ({ handlers }: { handlers: HandlersUsersTypes }) => {
             style={{ width: '110px' }}
             onClick={() => {
               setModalType('createUser');
-              closeModal();
               handleUpdateUser();
             }}
           />

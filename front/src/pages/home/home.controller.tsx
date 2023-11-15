@@ -1,6 +1,7 @@
 import request from '../../helpers/request';
 import HomeScreen from './home.screen';
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 const HomeController = () => {
   const [videos, setVideos] = useState([]);
@@ -20,8 +21,9 @@ const HomeController = () => {
       path: 'videos',
     });
     setLoading(false);
+
     if (error) {
-      return;
+      return toast.error(error);
     }
 
     setVideoHighlight(data?.[0]);
