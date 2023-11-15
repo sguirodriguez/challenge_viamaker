@@ -1,4 +1,4 @@
-import config from '@/config';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios, { ResponseType } from 'axios';
 
 const defaultMessage = 'Erro ao realizar a operação!';
@@ -38,15 +38,7 @@ const request = async ({
   responseType?: ResponseType;
 }) => {
   try {
-    const apiURL = baseURL || config.BACKEND_URL;
-    const token = sessionStorage.getItem('token');
-
-    if (!token) {
-      window.location.href = '/';
-    }
-
-    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-
+    const apiURL = baseURL || 'http://localhost:3333/';
     const { status, statusText, data } = await axios.request({
       baseURL: apiURL,
       headers,
@@ -63,11 +55,6 @@ const request = async ({
       data: data.data ? data.data : data,
     });
   } catch (error: any) {
-    if (error?.response?.status === 401) {
-      sessionStorage.clear();
-      window.location.href = '/login';
-    }
-
     return sendResponse({
       status: error?.response?.status,
       message:

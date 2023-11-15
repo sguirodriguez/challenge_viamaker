@@ -1,5 +1,5 @@
 import { colors } from '@styles/theme/colors';
-import { BsMap, BsGrid, BsSignTurnSlightRight } from 'react-icons/bs';
+import { BsPerson, BsGrid, BsBoxSeam } from 'react-icons/bs';
 
 export const sidebarMenuMock = [
   {
@@ -9,14 +9,12 @@ export const sidebarMenuMock = [
   },
   {
     title: 'Produtos',
-    icon: (
-      <BsSignTurnSlightRight style={{ color: colors.primary, fontSize: 20 }} />
-    ),
+    icon: <BsBoxSeam style={{ color: colors.primary, fontSize: 20 }} />,
     routePath: '/dashboard/produtos',
   },
   {
     title: 'Usuários',
-    icon: <BsMap style={{ color: colors.primary, fontSize: 19 }} />,
+    icon: <BsPerson style={{ color: colors.primary, fontSize: 19 }} />,
     routePath: '/dashboard/usuarios',
   },
 ];

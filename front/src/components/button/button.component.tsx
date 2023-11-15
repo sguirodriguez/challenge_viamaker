@@ -3,9 +3,17 @@ import * as Style from './button.styles';
 import { colors } from '@styles/theme/colors';
 import { CSSProperties } from 'styled-components';
 
-const Button = ({ style, text }: { style?: CSSProperties; text: string }) => {
+const Button = ({
+  style,
+  text,
+  onClick,
+}: {
+  style?: CSSProperties;
+  text: string;
+  onClick: () => void;
+}) => {
   return (
-    <Style.Container style={style}>
+    <Style.Container style={style} onClick={() => onClick()}>
       <H5 color={colors.white} textAlign="center">
         {text}
       </H5>

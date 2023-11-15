@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``
+export const Container = styled.div``;
 
 export const Row = styled.div`
   display: grid;
@@ -10,6 +10,9 @@ export const Row = styled.div`
 `;
 
 export const ResponsiveIframe = styled.iframe`
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 220px;
 `;
+
