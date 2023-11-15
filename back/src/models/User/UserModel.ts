@@ -47,7 +47,7 @@ export const UserFactory = (
     "User",
     attributes,
     {
-      tableName: "User",
+      tableName: "user",
       timestamps: true,
       paranoid: false,
     }
